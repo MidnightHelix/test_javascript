@@ -8,10 +8,10 @@ function generateTriangle() {
 
     $.ajax({
         type: 'POST',
-        url: '/generateTriangle',
+        url: 'http://localhost:3000/generateTriangle',
         data: { inputNumber: inputNumber },
         success: function (response) {
-            document.getElementById("result").innerText = response;
+            document.getElementById("result").innerHTML = response;
         }
     });
 }
@@ -26,10 +26,10 @@ function generateOddNumbers() {
 
     $.ajax({
         type: 'POST',
-        url: '/generateOddNumbers',
+        url: 'http://localhost:3000/generateOddNumbers',
         data: { inputNumber: inputNumber },
         success: function (response) {
-            document.getElementById("result").innerText = response;
+            document.getElementById("result").innerHTML = response;
         }
     });
 }
@@ -44,10 +44,10 @@ function generatePrimeNumbers() {
 
     $.ajax({
         type: 'POST',
-        url: '/generatePrimeNumbers',
+        url: 'http://localhost:3000/generatePrimeNumbers',
         data: { inputNumber: inputNumber },
         success: function (response) {
-            document.getElementById("result").innerText = response;
+            document.getElementById("result").innerHTML = response;
         }
     });
 }
