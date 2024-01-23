@@ -24,10 +24,10 @@ app.post('/generateTriangle', (req, res) => {
         return;
     }
 
-    let triangle = '';
-    for(let i = 1; i <= inputNumber; i++){
-        triangle += '0'.repeat(inputNumber - i) + i.toString().repeat(i) + '\n';
-    }
+     let triangle = '';
+    for(let i = 0; i < inputNumber.toString().length; i++){
+          triangle += inputNumber.toString()[i] + '0'.repeat(i) + '\n'
+      }
 
     res.send(triangle);
 });
