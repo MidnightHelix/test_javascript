@@ -2,16 +2,19 @@ const express = require ('express');
 const bodyParser = require('body-parser');
 const app = express();
 const path = require('path');
+var cors = require('cors');
 const port = 3000;
 
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json());
+app.use(cors());
 
-//app.use(express.static('public'));
+//app.use(express.static(path.join(__dirname, '/public')));
 
+// Serve the HTML file
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'form.html'));
-})
+  res.sendFile(path.join(__dirname, 'form.html'));
+});
 
 app.post('/generateTriangle', (req, res) => {
     let inputNumber = parseInt(req.body.inputNumber);
